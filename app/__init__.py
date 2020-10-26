@@ -1,4 +1,5 @@
 from flask import Flask
+<<<<<<< HEAD
 from flask_bootstrap import Bootstrap
 from config import config_options
 
@@ -25,3 +26,15 @@ def create_app(config_name):
     configure_request(app)
 
     return app
+=======
+from .config import DevConfig
+
+# Initializing application
+app = Flask(__name__, instance_relative_config = True)
+
+# Setting up configuration
+app.config.from_object(DevConfig)
+app.config.from_pyfile('config.py')
+
+from app import views
+>>>>>>> ea22201ef3f9d82a542f86eebf5b5b234e181d1a
