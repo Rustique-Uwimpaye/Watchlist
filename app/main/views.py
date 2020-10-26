@@ -23,8 +23,7 @@ def index():
     if search_movie:
         return redirect(url_for('search',movie_name=search_movie))
     else:
-    
-         return render_template('index.html', title = title, popular = popular_movies, upcoming = upcoming_movie, now_showing = now_showing_movie )
+        return render_template('index.html', title = title, popular = popular_movies, upcoming = upcoming_movie, now_showing = now_showing_movie )
 
 @main.route('/movie/<int:id>')
 def movie(id):
